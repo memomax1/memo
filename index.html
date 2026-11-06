@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Traffic Hub – 4 Free Traffic Sources</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#101820;--muted:#5a6772;--line:#d8dfe5;--accent:#0f7a5a;--accent-ink:#fff;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1318;--card:#161d24;--ink:#eef2f5;--muted:#9aa8b3;--line:#26313a;--accent:#34c79a;--accent-ink:#06140f}}
+:root[data-theme="dark"]{--bg:#0e1318;--card:#161d24;--ink:#eef2f5;--muted:#9aa8b3;--line:#26313a;--accent:#34c79a;--accent-ink:#06140f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+header{max-width:1400px;margin:0 auto;padding:20px 16px 8px}
+h1{margin:0;font-size:clamp(1.3rem,3vw,1.8rem)}
+header p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+main{max-width:1400px;margin:0 auto;padding:12px 16px 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:800px){main{grid-template-columns:1fr}}
+.frame{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.bar strong{font-size:.95rem}
+.bar a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:8px}
+.bar a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+iframe{width:100%;height:62vh;min-height:360px;border:0;display:block;background:var(--card)}
+footer{max-width:1400px;margin:0 auto;padding:0 16px 24px;color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>Traffic Hub</h1>
+  <p>Four free traffic sources in one fast page. Each panel loads only when you scroll to it.</p>
+</header>
+<main id="grid"></main>
+<footer>If a panel stays blank, the site blocks embedding. Use its “Open” button instead.</footer>
+<script>
+(function(){
+  var items=[
+    {t:"Source 1",u:"https://lltrco.com/?r=mahmoudyoussef20"},
+    {t:"Source 2",u:"https://lltrco.com/?r=mahmoudyoussef2024"},
+    {t:"Source 3",u:"https://lltrco.com/?r=mmyy2"},
+    {t:"Source 4",u:"https://lltrco.com/?r=mmyy11"}
+  ];
+  var g=document.getElementById("grid");
+  items.forEach(function(i){
+    var s=document.createElement("section");s.className="frame";
+    var b=document.createElement("div");b.className="bar";
+    var n=document.createElement("strong");n.textContent=i.t;
+    var a=document.createElement("a");a.href=i.u;a.target="_blank";a.rel="noopener";a.textContent="Open ↗";
+    b.append(n,a);
+    var f=document.createElement("iframe");
+    f.src=i.u;f.title=i.t;f.loading="lazy";f.referrerPolicy="no-referrer-when-downgrade";
+    f.setAttribute("sandbox","allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation");
+    s.append(b,f);g.appendChild(s);
+  });
+})();
+</script>
+</body>
+</html>
