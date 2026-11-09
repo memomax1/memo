@@ -1,56 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Traffic Hub – 2 Free Traffic Sources</title>
+<title>لوحة الصفحات</title>
 <style>
-:root{--bg:#f4f6f8;--card:#fff;--ink:#101820;--muted:#5a6772;--line:#d8dfe5;--accent:#0f7a5a;--accent-ink:#fff;color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1318;--card:#161d24;--ink:#eef2f5;--muted:#9aa8b3;--line:#26313a;--accent:#34c79a;--accent-ink:#06140f}}
-:root[data-theme="dark"]{--bg:#0e1318;--card:#161d24;--ink:#eef2f5;--muted:#9aa8b3;--line:#26313a;--accent:#34c79a;--accent-ink:#06140f}
+:root{--bg:#eef1f5;--card:#fff;--text:#1b2430;--muted:#5d6b7c;--line:#d5dbe3;--accent:#1f6feb;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b222b;--text:#e8edf3;--muted:#93a1b3;--line:#2c3643;--accent:#5aa2ff}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b222b;--text:#e8edf3;--muted:#93a1b3;--line:#2c3643;--accent:#5aa2ff}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-header{max-width:1400px;margin:0 auto;padding:20px 16px 8px}
-h1{margin:0;font-size:clamp(1.3rem,3vw,1.8rem)}
-header p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
-main{max-width:1400px;margin:0 auto;padding:12px 16px 24px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:800px){main{grid-template-columns:1fr}}
-.frame{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line)}
-.bar strong{font-size:.95rem}
-.bar a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:8px}
-.bar a:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-iframe{width:100%;height:62vh;min-height:360px;border:0;display:block;background:var(--card)}
-footer{max-width:1400px;margin:0 auto;padding:0 16px 24px;color:var(--muted);font-size:.85rem}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.6}
+main{max-width:1400px;margin:0 auto;padding:20px 16px 32px}
+h1{font-size:1.4rem;margin:0 0 16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.card.wide{grid-column:1 / -1;margin-top:0}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--line);font-size:.9rem}
+.bar span{color:var(--muted);direction:ltr;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar a{color:var(--accent);text-decoration:none;white-space:nowrap}
+.bar a:hover,.bar a:focus-visible{text-decoration:underline}
+iframe{width:100%;height:480px;border:0;display:block;background:#fff}
+.wide iframe{height:560px}
+@media (max-width:800px){.grid{grid-template-columns:1fr}iframe{height:420px}}
 </style>
 </head>
 <body>
-<header>
-  <h1>Traffic Hub</h1>
-  <p>Two free traffic sources in one fast page. Each panel loads only when you scroll to it.</p>
-</header>
-<main id="grid"></main>
-<footer>If a panel stays blank, the site blocks embedding. Use its “Open” button instead.</footer>
-<script>
-(function(){
-  var items=[
-    {t:"Source 1",u:"https://lltrco.com/?r=mahmoudyoussef20"},
-    {t:"Source 2",u:"https://lltrco.com/?r=mahmoudyoussef2024"}
-  ];
-  var g=document.getElementById("grid");
-  items.forEach(function(i){
-    var s=document.createElement("section");s.className="frame";
-    var b=document.createElement("div");b.className="bar";
-    var n=document.createElement("strong");n.textContent=i.t;
-    var a=document.createElement("a");a.href=i.u;a.target="_blank";a.rel="noopener";a.textContent="Open ↗";
-    b.append(n,a);
-    var f=document.createElement("iframe");
-    f.src=i.u;f.title=i.t;f.loading="lazy";f.referrerPolicy="no-referrer-when-downgrade";
-    f.setAttribute("sandbox","allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation-by-user-activation");
-    s.append(b,f);g.appendChild(s);
-  });
-})();
-</script>
+<main>
+  <h1>لوحة الصفحات</h1>
+  <div class="grid">
+    <section class="card">
+      <div class="bar"><span>mahmoudyoussef20</span><a href="https://lltrco.com/?r=mahmoudyoussef20" target="_blank" rel="noopener">فتح في تاب</a></div>
+      <iframe title="mahmoudyoussef20" src="https://lltrco.com/?r=mahmoudyoussef20" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="card">
+      <div class="bar"><span>mmyy1</span><a href="https://lltrco.com/?r=mmyy1" target="_blank" rel="noopener">فتح في تاب</a></div>
+      <iframe title="mmyy1" src="https://lltrco.com/?r=mmyy1"></iframe>
+    </section>
+    <section class="card">
+      <div class="bar"><span>mmyy11</span><a href="https://lltrco.com/?r=mmyy11" target="_blank" rel="noopener">فتح في تاب</a></div>
+      <iframe title="mmyy11" src="https://lltrco.com/?r=mmyy11"></iframe>
+    </section>
+    <section class="card">
+      <div class="bar"><span>mahmoudyoussef2024</span><a href="https://lltrco.com/?r=mahmoudyoussef2024" target="_blank" rel="noopener">فتح في تاب</a></div>
+      <iframe title="mahmoudyoussef2024" src="https://lltrco.com/?r=mahmoudyoussef2024"></iframe>
+    </section>
+    <section class="card wide">
+      <div class="bar"><span>mmyy2</span><a href="https://lltrco.com/?r=mmyy2" target="_blank" rel="noopener">فتح في تاب</a></div>
+      <iframe title="mmyy2" src="https://lltrco.com/?r=mmyy2"></iframe>
+    </section>
+  </div>
+</main>
 </body>
 </html>
