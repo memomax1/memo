@@ -1,21 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LLTRCO Frames</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Six Ads. One Screen. | Mahmoud Youssef</title>
+<meta name="description" content="Run six traffic exchange links side by side in a single view.">
+<meta name="theme-color" content="#171c23">
+<link rel="preconnect" href="https://lltrco.com" crossorigin>
+<link rel="dns-prefetch" href="https://lltrco.com">
+<style>
+:root{--bg:#0f1318;--bar:#171c23;--line:#272e38;--text:#e8ebf0;--muted:#a3adba;--accent:#3b82f6;--gold:#f5c542}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{display:flex;flex-direction:column;background:var(--bg);color:var(--text);font-family:system-ui,"Segoe UI",Tahoma,Arial,sans-serif}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px;background:var(--bar);border-bottom:1px solid var(--line);flex-shrink:0}
+.brand{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;white-space:nowrap}
+.mail{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:8px;color:var(--text);text-decoration:none;font-size:12.5px;white-space:nowrap}
+.mail:hover{background:#1f2630;border-color:var(--accent)}
+.mail:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.intro{padding:14px 20px 12px;text-align:center;background:var(--bar);border-bottom:1px solid var(--line);flex-shrink:0}
+.intro h1{font-size:24px;font-weight:800;letter-spacing:.3px}
+.intro h1 span{color:var(--gold)}
+.intro p{max-width:900px;margin:6px auto 0;font-size:13.5px;line-height:1.55;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:2px;flex:1;min-height:0;background:var(--line)}
+.pane{min-width:0;min-height:0;background:#fff;contain:layout paint}
+iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+
+@media(max-width:1000px){
+html,body{height:auto;min-height:100%}
+.grid{grid-template-columns:1fr 1fr;grid-template-rows:none;flex:none}
+.pane{height:60vh}
+}
+
+@media(max-width:700px){
+.topbar{padding:6px 10px}
+.mail{font-size:11px;padding:5px 8px}
+.intro{padding:8px 12px}
+.intro h1{font-size:18px}
+.intro p{font-size:11.5px;line-height:1.45;margin-top:4px}
+.grid{grid-template-columns:1fr}
+.pane{height:75vh}
+}
+</style>
 </head>
-<body style="margin:0;padding:0;">
+<body>
 
-<iframe src="https://lltrco.com/?r=mahmoudyoussef20" width="100%" height="700" style="border:0;display:block;"></iframe>
+<div class="topbar">
+<div class="brand"><span>Mahmoud Youssef</span><span aria-hidden="true">👑</span></div>
+<a class="mail" href="mailto:mahmoudyoussef.gadalrab@gmail.com">✉ mahmoudyoussef.gadalrab@gmail.com</a>
+</div>
 
-<iframe src="https://lltrco.com/?r=mahmoudyoussef2024" width="100%" height="700" style="border:0;display:block;"></iframe>
+<header class="intro">
+<h1>Six Ads. <span>One Screen.</span></h1>
+<p>This page runs six traffic exchange links side by side in a single view. All panels load live and stay active at the same time. Simply keep this page open and let the exchange work for you.</p>
+</header>
 
-<iframe src="https://lltrco.com/?r=mmyy2" width="100%" height="700" style="border:0;display:block;"></iframe>
-
-<iframe src="https://lltrco.com/?r=mmyy11" width="100%" height="700" style="border:0;display:block;"></iframe>
-
-<iframe src="https://lltrco.com/?r=mmyy1" width="100%" height="700" style="border:0;display:block;"></iframe>
+<main class="grid">
+<section class="pane"><iframe src="https://lltrco.com/?r=mahmoudyoussef20" title="Ad 1" allow="fullscreen" loading="eager"></iframe></section>
+<section class="pane"><iframe src="https://lltrco.com/?r=mahmoudyoussef2024" title="Ad 2" allow="fullscreen" loading="eager"></iframe></section>
+<section class="pane"><iframe src="https://lltrco.com/?r=mmyy1" title="Ad 3" allow="fullscreen" loading="eager"></iframe></section>
+<section class="pane"><iframe src="https://lltrco.com/?r=mmyy2" title="Ad 4" allow="fullscreen" loading="eager"></iframe></section>
+<section class="pane"><iframe src="https://lltrco.com/?r=mmyy11" title="Ad 5" allow="fullscreen" loading="eager"></iframe></section>
+<section class="pane"><iframe src="https://lltrco.com/?r=mmyy4" title="Ad 6" allow="fullscreen" loading="eager"></iframe></section>
+</main>
 
 </body>
 </html>
