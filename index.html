@@ -21,6 +21,7 @@
 
     .stage {
       position: relative;
+      overflow: hidden;
       height: calc(100% - 50px);
     }
 
@@ -64,7 +65,20 @@
       justify-content: center;
       text-align: center;
       padding: 20px;
-      background: rgba(0, 0, 0, 0.92);
+    }
+
+    /* Fog layer extends past the edges so the borders are blurred too */
+    .curtain::before {
+      content: "";
+      position: absolute;
+      inset: -60px;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 25% 30%, rgba(120, 120, 130, 0.9), transparent 60%),
+        radial-gradient(ellipse at 75% 70%, rgba(100, 100, 112, 0.9), transparent 60%),
+        rgb(52, 52, 60);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
     }
 
     .close-btn {
@@ -92,7 +106,8 @@
       height: 36px;
       border: 0;
       background: transparent;
-      color: #000;
+      color: transparent;
+      opacity: 0;
       font-size: 20px;
       line-height: 36px;
       cursor: default;
