@@ -55,7 +55,21 @@
 
     iframe { width: 100%; height: 100%; border: 0; }
 
-    /* Light curtain covering all four frames */
+    /* Ad cell inside the grid */
+    .ad-box {
+      background: #1e1e2f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      padding: 8px;
+    }
+    .ad-box .ad-inner {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Light curtain covering all frames */
     .curtain {
       position: absolute;
       inset: 0;
@@ -158,9 +172,13 @@
         <span>Frame 3</span>
         <iframe src="https://lltrco.com/?r=mmyy11" title="Frame 3"></iframe>
       </div>
-      <div class="frame-box">
-        <span>Frame 4</span>
-        <iframe src="https://lltrco.com/?r=mmyy1" title="Frame 4"></iframe>
+
+      <!-- Ad in place of the removed frame (mmyy1) -->
+      <div class="frame-box ad-box">
+        <div class="ad-inner">
+          <script async="async" data-cfasync="false" src="https://bauval.org/21/fea48d233e3fb5fa729730759dae7207"></script>
+          <div id="container-fea48d233e3fb5fa729730759dae7207"></div>
+        </div>
       </div>
     </div>
 
@@ -178,12 +196,6 @@
   <!-- Ads: always visible, below the grid -->
   <section class="ads">
     <div class="ads-label">إعلانات</div>
-
-    <!-- Native banner -->
-    <div class="ad-slot">
-      <script async="async" data-cfasync="false" src="https://bauval.org/21/fea48d233e3fb5fa729730759dae7207"></script>
-      <div id="container-fea48d233e3fb5fa729730759dae7207"></div>
-    </div>
 
     <!-- Banner 320x50 -->
     <div class="ad-slot">
